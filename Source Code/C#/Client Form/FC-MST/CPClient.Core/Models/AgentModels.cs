@@ -29,5 +29,7 @@ namespace CPClient.Core.Models
         public string Email { get; set; }
         public ProvinceListItemModel Province { get; set; }
         public DistrictListItemModel District { get; set; }
+
+        public bool IsActive { get; set; }
     }
 }

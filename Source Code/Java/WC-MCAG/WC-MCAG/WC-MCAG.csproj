@@ -251,6 +251,7 @@
     <Compile Include="Controllers\AgentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MerchantController.cs" />
+    <Compile Include="Controllers\NotificationController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -265,6 +266,7 @@
     <Content Include="Views\Agent\ViewMerchantManaged.cshtml" />
     <Content Include="Views\Merchant\ViewDetail.cshtml" />
     <Content Include="Views\User\ChangePassword.cshtml" />
+    <Content Include="Views\Notification\Inbox.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

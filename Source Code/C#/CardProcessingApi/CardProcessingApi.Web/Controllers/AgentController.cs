@@ -42,6 +42,24 @@ namespace CardProcessingApi.Web.Controllers
             return Ok();
         }
 
+        [HttpPost]
+        [RoleAuthorize(Enums.UserRole.Master)]
+        [Route("unactive/{agentId}")]
+        public IHttpActionResult UnactivateAgent(int agentId)
+        {
+            _agentLogic.UnactivateAgent(agentId);
+            return Ok();
+        }
+
+        [HttpPost]
+        [RoleAuthorize(Enums.UserRole.Master)]
+        [Route("active/{agentId}")]
+        public IHttpActionResult ActivateAgent(int agentId)
+        {
+            _agentLogic.ActivateAgent(agentId);
+            return Ok();
+        }
+
         [HttpGet]
         [Route("all")]
         public List<AgentListItemModel> GetAll()

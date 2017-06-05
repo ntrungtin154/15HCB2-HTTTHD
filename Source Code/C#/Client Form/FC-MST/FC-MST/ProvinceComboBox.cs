@@ -27,19 +27,27 @@ namespace FC_MST
 
         private async void LoadAllProvinces()
         {
-            var provinces = await LocationLogic.FetchAllProvincesAsync();
-            foreach (var province in provinces)
+            DataSource = await LocationLogic.FetchAllProvincesAsync();
+            foreach (var province in DataSource)
             {
                 cbxProvinces.Items.Add(province);
             }
 
-            if (provinces.Count > 0)
+            if (DataSource.Count > 0)
             {
                 cbxProvinces.SelectedIndex = 0;
             }
         }
 
-        public ComboBox ComboBox => cbxProvinces;
+        public ComboBox ComboBox
+        {
+            get
+            {
+                return cbxProvinces;
+            }
+        }
+
+        public List<ProvinceListItemModel> DataSource { get; private set; }
 
         public ProvinceListItemModel GetSelectedItem()
         {

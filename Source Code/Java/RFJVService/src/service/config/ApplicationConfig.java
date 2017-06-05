@@ -6,6 +6,7 @@ import javax.ws.rs.core.Application;
 
 import service.export.AgentRestful;
 import service.export.MerchantRestful;
+import service.export.NotificationRestful;
 import service.export.UserRestful;
 
 
@@ -25,5 +26,6 @@ public class ApplicationConfig extends Application {
 		resources.add(UserRestful.class);	
 		resources.add(AgentRestful.class);	
 		resources.add(MerchantRestful.class);
+		resources.add(NotificationRestful.class);
 	}
 }

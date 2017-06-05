@@ -29,19 +29,24 @@ namespace FC_MST
 
         private async void GetAllDistricts()
         {
-            var districts = await LocationLogic.FetchAllDistrictsAsync();
-            foreach (var district in districts)
+            DataSource = await LocationLogic.FetchAllDistrictsAsync();
+            foreach (var district in DataSource)
             {
                 cbxDistricts.Items.Add(district);
             }
 
-            if (districts.Count > 0)
+            if (DataSource.Count > 0)
             {
                 cbxDistricts.SelectedIndex = 0;
             }
         }
 
-        public ComboBox ComboBox => cbxDistricts;
+        public ComboBox ComboBox
+        {
+            get { return cbxDistricts; }
+        }
+
+        public List<DistrictListItemModel> DataSource { get; private set; } 
 
         public DistrictListItemModel GetSelectedItem()
         {

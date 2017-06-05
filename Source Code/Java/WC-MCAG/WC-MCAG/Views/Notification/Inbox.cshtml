@@ -1,0 +1,206 @@
+﻿
+@{
+    ViewBag.Title = "Inbox";
+}
+
+@section css {
+    <style>
+        .highlight {
+            background-color: MintCream;
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+    </style>
+}
+
+@section contentHeader {
+    <div id="breadcrumb"> <a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="#" class="current">Hộp thư</a> </div>
+    <h1>Thông báo</h1>
+}
+<hr>
+<div class="row-fluid" ng-app="myApp" ng-controller="myController">
+    <div class="span12">
+        <div class="widget-box">
+            <div class="widget-title">
+                <span class="icon"> <i class="icon-file"></i> </span>
+                <h5>Thong bao</h5>
+            </div>
+            <div class="widget-content nopadding ">
+                <ul class="recent-posts" id="Notifi_list" >
+                    
+                    <li class="compact_content" ng-repeat="row in list" ng-class="{'highlight' : row.isSeen === '0' ? true : false}">
+                        <div class="user-thumb"> <img width="40" height="40" alt="User" src="~/Asset/img/demo/envelope.png"> </div>
+                        <div class="article-post">
+
+                            <span class="user-info"> Từ: {{row.senttFrom}}  ----  Ngày: {{row.notificationTime}} </span>
+                            <p><a href="#">{{row.message}}</a> </p>
+                        </div>
+                    </li>
+                    
+                    @*<li>
+                        <div class="user-thumb"> <img width="40" height="40" alt="User" src="~/Asset/img/demo/open_envelope.jpg"> </div>
+                        <div class="article-post">
+
+                            <span class="user-info"> By: john Deo / Date: 2 Aug 2012 / Time:09:27 AM </span>
+                            <p><a href="#">This is a much longer one that will go on for a few lines.It has multiple paragraphs and is full of waffle to pad out the comment.</a> </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="user-thumb"> <img width="40" height="40" alt="User" src="~/Asset/img/demo/envelope.png"> </div>
+                        <div class="article-post">
+
+                            <span class="user-info"> By: john Deo / Date: 2 Aug 2012 / Time:09:27 AM </span>
+                            <p><a href="#">This is a much longer one that will go on for a few lines.Itaffle to pad out the comment.</a> </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="user-thumb"> <img width="40" height="40" alt="User" src="~/Asset/img/demo/envelope.png"> </div>
+                        <div class="article-post">
+
+                            <span class="user-info"> By: john Deo / Date: 2 Aug 2012 / Time:09:27 AM </span>
+                            <p><a href="#">This is a much longer one that will go on for a few lines.It has multiple paragraphs and is full of waffle to pad out the comment.</a> </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="user-thumb"> <img width="40" height="40" alt="User" src="img/demo/av2.jpg"> </div>
+                        <div class="article-post">
+
+                            <span class="user-info"> By: john Deo / Date: 2 Aug 2012 / Time:09:27 AM </span>
+                            <p><a href="#">This is a much longer one that will go on for a few lines.It has multiple paragraphs and is full of waffle to pad out the comment.</a> </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="user-thumb"> <img width="40" height="40" alt="User" src="img/demo/av3.jpg"> </div>
+                        <div class="article-post">
+
+                            <span class="user-info"> By: john Deo / Date: 2 Aug 2012 / Time:09:27 AM </span>
+                            <p><a href="#">This is a much longer one that will go on for a few lines.Itaffle to pad out the comment.</a> </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="user-thumb"> <img width="40" height="40" alt="User" src="img/demo/av1.jpg"> </div>
+                        <div class="article-post">
+
+                            <span class="user-info"> By: john Deo / Date: 2 Aug 2012 / Time:09:27 AM </span>
+                            <p><a href="#">This is a much longer one that will go on for a few lines.It has multiple paragraphs and is full of waffle to pad out the comment.</a> </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="user-thumb"> <img width="40" height="40" alt="User" src="img/demo/av2.jpg"> </div>
+                        <div class="article-post">
+
+                            <span class="user-info"> By: john Deo / Date: 2 Aug 2012 / Time:09:27 AM </span>
+                            <p><a href="#">This is a much longer one that will go on for a few lines.It has multiple paragraphs and is full of waffle to pad out the comment.</a> </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="user-thumb"> <img width="40" height="40" alt="User" src="img/demo/av3.jpg"> </div>
+                        <div class="article-post">
+
+                            <span class="user-info"> By: john Deo / Date: 2 Aug 2012 / Time:09:27 AM </span>
+                            <p><a href="#">This is a much longer one that will go on for a few lines.Itaffle to pad out the comment.</a> </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="user-thumb"> <img width="40" height="40" alt="User" src="img/demo/av1.jpg"> </div>
+                        <div class="article-post">
+
+                            <span class="user-info"> By: john Deo / Date: 2 Aug 2012 / Time:09:27 AM </span>
+                            <p><a href="#">This is a much longer one that will go on for a few lines.It has multiple paragraphs and is full of waffle to pad out the comment.</a> </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="user-thumb"> <img width="40" height="40" alt="User" src="img/demo/av2.jpg"> </div>
+                        <div class="article-post">
+
+                            <span class="user-info"> By: john Deo / Date: 2 Aug 2012 / Time:09:27 AM </span>
+                            <p><a href="#">This is a much longer one that will go on for a few lines.It has multiple paragraphs and is full of waffle to pad out the comment.</a> </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="user-thumb"> <img width="40" height="40" alt="User" src="img/demo/av3.jpg"> </div>
+                        <div class="article-post">
+
+                            <span class="user-info"> By: john Deo / Date: 2 Aug 2012 / Time:09:27 AM </span>
+                            <p><a href="#">This is a much longer one that will go on for a few lines.Itaffle to pad out the comment.</a> </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="user-thumb"> <img width="40" height="40" alt="User" src="img/demo/av1.jpg"> </div>
+                        <div class="article-post">
+
+                            <span class="user-info"> By: john Deo / Date: 2 Aug 2012 / Time:09:27 AM </span>
+                            <p><a href="#">This is a much longer one that will go on for a few lines.It has multiple paragraphs and is full of waffle to pad out the comment.</a> </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="user-thumb"> <img width="40" height="40" alt="User" src="img/demo/av2.jpg"> </div>
+                        <div class="article-post">
+
+                            <span class="user-info"> By: john Deo / Date: 2 Aug 2012 / Time:09:27 AM </span>
+                            <p><a href="#">This is a much longer one that will go on for a few lines.It has multiple paragraphs and is full of waffle to pad out the comment.</a> </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="user-thumb"> <img width="40" height="40" alt="User" src="img/demo/av3.jpg"> </div>
+                        <div class="article-post">
+
+                            <span class="user-info"> By: john Deo / Date: 2 Aug 2012 / Time:09:27 AM </span>
+                            <p><a href="#">This is a much longer one that will go on for a few lines.Itaffle to pad out the comment.</a> </p>
+                        </div>
+                    </li>*@
+                    
+                </ul>
+                <span id="more_show"><a href="#"> Thêm ... </a></span>
+            </div>
+        </div>
+
+    </div>
+    <!-- <div class="span6"> -->
+
+</div>
+
+@section js {
+    <script src="~/Asset/angular/angular.min.js"></script>
+    <script>
+
+        var app = angular.module('myApp', []);
+
+        app.service('userService', function ($http) {
+            this.f_GetData = function () {
+                return $http({
+                    method: "POST",
+                    data: { token: sessionStorage.token_value },
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    url: 'http://localhost:8080/RFJVService/rest/notification/getnotiinboxbytoken'
+                });
+            };
+
+        });
+
+        app.controller('myController', function ($scope, userService) {
+
+            userService.f_GetData().then(function (a_Result) {
+                var l_Data = a_Result.data;
+                console.log(l_Data.notificationFrom);
+                $scope.list = l_Data.notificationFrom;
+            })
+
+        });
+        //
+        $(function () {
+            $('#more_show').click(function () {
+                $('#Notifi_list li:hidden').slice(0, 5).show();
+                if ($('#Notifi_list li').length == $('#Notifi_list li:visible').length) {
+                    $('#more_show').hide();
+                }
+            });
+        });
+
+    </script>
+}
+
+
+
+
